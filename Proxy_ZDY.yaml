@@ -1,4 +1,5 @@
 payload:
+  #苹果推送
   - '+.apple-relay.akamaized.net'
   - '+.apple-relay.apple.com'
   - '+.apple-relay.cloudflare.com'
@@ -7,3 +8,5 @@ payload:
   - '+.push.apple.com'
   - '+.api.push.apple.com'
   - '+.courier.push.apple.com'
+  #谷歌邮箱
+  - DST-PORT,993
