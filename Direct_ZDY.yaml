@@ -1,9 +1,2 @@
 payload:
-  - '+.apple-relay.akamaized.net'
-  - '+.apple-relay.apple.com'
-  - '+.apple-relay.cloudflare.com'
-  - '+.apple-relay.fastly-edge.com'
-  - '+.apple-relay.mask.apple-dns.net'
-  - '+.push.apple.com'
-  - '+.api.push.apple.com'
-  - '+.courier.push.apple.com'
+  
