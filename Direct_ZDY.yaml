@@ -1,3 +1,4 @@
 payload:
-  - DST-PORT,993 #谷歌邮箱
+ #谷歌邮箱
+  - DST-PORT,993
   
