@@ -8,5 +8,3 @@ payload:
   - '+.push.apple.com'
   - '+.api.push.apple.com'
   - '+.courier.push.apple.com'
-  #谷歌邮箱
-  - DST-PORT,993
