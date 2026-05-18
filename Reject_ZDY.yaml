@@ -4,6 +4,7 @@
 #  - '+.580ai.net'      域名后缀/泛域名匹配
 
 payload:
+# >>> WebRTC 隐私防泄露规则开始 <<<
   - '*stun*'
   - '*turn*'
   - DST-PORT,3478
