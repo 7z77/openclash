@@ -4,3 +4,7 @@
 #  - '+.580ai.net'      域名后缀/泛域名匹配
 
 payload:
+  - '*stun*'
+  - '*turn*'
+  - DST-PORT,3478
+  - DST-PORT,3478
