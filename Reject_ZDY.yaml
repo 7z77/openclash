@@ -5,7 +5,7 @@
 
 payload:
 # >>> WebRTC 隐私防泄露规则开始 <<<
-  - '*stun*'
-  - '*turn*'
-  - DST-PORT,3478
-  - DST-PORT,3478
+ # - '*stun*'
+ # - '*turn*'
+ # - DST-PORT,3478
+ # - DST-PORT,3478
