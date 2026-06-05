@@ -9,3 +9,8 @@ payload:
  # - '*turn*'
  # - DST-PORT,3478
  # - DST-PORT,3478
+payload:
+  - DST-PORT,3478
+  - DST-PORT,5349
+  - '*stun*'
+  - '*turn*'
