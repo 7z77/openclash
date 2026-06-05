@@ -1,0 +1,144 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxy-providers:
+  bytevirt:
+    type: http
+    url: https://web.esssle.ccwu.cc:2096/sufdfsfsdb/hAQrerjE
+    #interval: 86400
+    proxy: DIRECT
+    path: ./providers/bytevirt.yaml
+    health-check:
+      #enable: true
+      #url: http://connectivitycheck.gstatic.com/generate_204
+      #interval: 300
+    override:
+      skip-cert-verify: true
+      udp: true
+  CF:
+    type: http
+    url: https://www.vorter9527.ccwu.cc/sub?token=6d13eedf8c073e086e9514c27e640939
+    interval: 21600
+    proxy: DIRECT
+    path: ./providers/CF.yaml
+    health-check:
+      #enable: true
+      #url: http://connectivitycheck.gstatic.com/generate_204
+      #interval: 300
+    override:
+      skip-cert-verify: true
+      udp: true
+proxies:
+  - {name: Hysteria2_GGY, server: 35.212.255.10, port: 443, alpn: [h3], down: "350", fingerprint: "", obfs: "", obfs-password: "", password: 674d71f1-d6f7-412e-98b1-4fc0620188c6, skip-cert-verify: true, sni: www.bing.com, type: hysteria2, up: "50"}
+proxy-groups:
+  - name: 🚀 区域
+    type: select
+    use:
+      - bytevirt
+      - CF
+    filter: .*
+    proxies:
+      - Hysteria2_GGY
+  - name: 🧠 AI
+    type: select
+    use:
+      - bytevirt
+      - CF
+    filter: .*
+    proxies:
+      - 🚀 区域
+      - DIRECT
+      - Hysteria2_GGY
+  - name: 🎬 YouTube
+    type: select
+    use:
+      - bytevirt
+      - CF
+    filter: .*
+    proxies:
+      - 🚀 区域
+      - Hysteria2_GGY
+  - name: 🍎 Apple
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 区域
+  - name: 🔀 非标端口
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 区域
+      - REJECT
+rules:
+  - GEOSITE,private,DIRECT
+  - GEOIP,private,DIRECT,no-resolve
+  - RULE-SET,Direct_ZDY,DIRECT
+  - RULE-SET,Proxy_ZDY,🚀 区域
+  - RULE-SET,Reject_ZDY,REJECT
+  - RULE-SET,Custom_Direct_Domain,DIRECT
+  - RULE-SET,Custom_Direct_Classical_IP,DIRECT
+  - RULE-SET,Custom_Proxy_Domain,🚀 区域
+  - RULE-SET,Custom_Proxy_Classical_IP,🚀 区域
+  - GEOSITE,category-ai-!cn,🧠 AI
+  - GEOSITE,youtube,🎬 YouTube
+  - GEOSITE,apple,🍎 Apple
+  - GEOSITE,category-games@cn,DIRECT
+  - GEOSITE,category-game-platforms-download,DIRECT
+  - GEOSITE,category-public-tracker,DIRECT
+  - GEOSITE,gfw,🚀 区域
+  - GEOSITE,cn,DIRECT
+  - GEOIP,cn,DIRECT,no-resolve
+  - RULE-SET,Custom_Port_Direct,🔀 非标端口
+  - MATCH,🚀 区域
+rule-providers:
+  Direct_ZDY:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/7z77/openclash/main/Direct_ZDY.yaml
+    path: ./providers/17217389360845130839_domain.yaml
+    interval: 432000
+  Proxy_ZDY:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/7z77/openclash/main/Proxy_ZDY.yaml
+    path: ./providers/13569381676554310154_domain.yaml
+    interval: 432000
+  Reject_ZDY:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/7z77/openclash/main/Reject_ZDY.yaml
+    path: ./providers/6573642527756232825_domain.yaml
+    interval: 432000
+  Custom_Direct_Domain:
+    type: http
+    behavior: domain
+    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Domain.yaml
+    path: ./providers/2305457515016618925_domain.yaml
+    interval: 432000
+  Custom_Direct_Classical_IP:
+    type: http
+    behavior: classical
+    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Classical_IP.yaml
+    path: ./providers/15204165614954008964.yaml
+    interval: 432000
+  Custom_Proxy_Domain:
+    type: http
+    behavior: domain
+    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.yaml
+    path: ./providers/10543794580940256312_domain.yaml
+    interval: 432000
+  Custom_Proxy_Classical_IP:
+    type: http
+    behavior: classical
+    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Classical_IP.yaml
+    path: ./providers/3673053372641237649.yaml
+    interval: 432000
+  Custom_Port_Direct:
+    type: http
+    behavior: classical
+    url: https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Port_Direct.yaml
+    path: ./providers/2451647452112462632.yaml
+    interval: 432000
