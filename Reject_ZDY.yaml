@@ -2,9 +2,14 @@
 #  - '*m-team*'         关键词/通配符域名匹配
 #  - DST-PORT,1-79      目标端口范围匹配
 #  - '+.580ai.net'      域名后缀/泛域名匹配
+ # - DST-PORT,3478
+ # - DST-PORT,5349
+  #- SRC-PORT,3478
+  #- SRC-PORT,5349
 payload:
 # >>> WebRTC 隐私防泄露规则开始 <<<
   - '*stun*'
+  - '*synology*'
   - '*turn*'
-  - DST-PORT,3478
-  - DST-PORT,5349
+  - SRC-PORT,3478
+  - SRC-PORT,5349
