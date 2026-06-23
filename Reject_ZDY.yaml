@@ -8,7 +8,7 @@
   #- SRC-PORT,5349
 payload:
 # >>> WebRTC 隐私防泄露规则开始 <<<
-  - '*stun*'
-  - '*turn*'
+#  - '*stun*'
+#  - '*turn*'
 #  - DST-PORT,3478
   - DST-PORT,5349
