@@ -9,7 +9,6 @@
 payload:
 # >>> WebRTC 隐私防泄露规则开始 <<<
   - '*stun*'
-  - '*synology*'
   - '*turn*'
-  - SRC-PORT,3478
-  - SRC-PORT,5349
+#  - DST-PORT,3478
+  - DST-PORT,5349
