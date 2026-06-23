@@ -10,5 +10,7 @@ payload:
 # >>> WebRTC 隐私防泄露规则开始 <<<
 #  - '*stun*'
 #  - '*turn*'
+  - DOMAIN-KEYWORD,stun
+  - DOMAIN-KEYWORD,turn
   - DST-PORT,3478
   - DST-PORT,5349
