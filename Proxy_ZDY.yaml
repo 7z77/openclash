@@ -5,4 +5,5 @@
 
 payload:
   #- '+.esssle.ccwu.cc'
-  - 'gvt2.com'  
+  - 'gvt2.com' 
+  - 'DOMAIN-SUFFIX,gvt2.com'
