@@ -4,6 +4,4 @@
 #  - '+.580ai.net'      域名后缀/泛域名匹配
 
 payload:
-  #- '+.esssle.ccwu.cc'
-  - 'gvt2.com' 
-  - 'DOMAIN-SUFFIX,gvt2.com'
+  - '+.gvt2.com'
