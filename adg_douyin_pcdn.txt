@@ -1,9 +1,0 @@
-#抖音 PCDN 精准屏蔽【最终定稿，可长期使用】
-
-||*.idouyinvod.com^$important
-||flive.ixigua.com^$important
-||flive.douyincdn.com^$important
-! pull 系列：-X5- 中间段，或者 -X5. 域名末尾
-/(pull.*-[a-z][0-9](-|\.))(douyincdn|flive\.douyincdn|ixigua|douyinliving)\.com/$important
-! push-rtmp 系列
-/(push-rtmp.*-[a-z][0-9](-|\.))(douyincdn|flive\.douyincdn|ixiguaa|douyinliving)\.com/$important
